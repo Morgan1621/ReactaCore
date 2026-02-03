@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="200" src="https://github.com/Morgan1621/ReactaCore/blob/master/Oficial.png?raw=true"  />
+  <img height="200" src="https://github.com/Morgan1621/ReactaCore/blob/master/Oficial.png?raw=true"/>
 </div>
 
 
