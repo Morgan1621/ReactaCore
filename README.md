@@ -6,6 +6,7 @@
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=react,vite,nodejs,cs,dotnet,mysql"/>
+    [![License: MIT](https://ziadoua.github.io/m3-Markdown-Badges/badges/LicenceMIT/licencemit1.svg)](LICENSE)
   </a>
 </p>
 
