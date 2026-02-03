@@ -8,7 +8,7 @@
   </a>
 </p>
 
-🚀 ReactaCore
+## 🚀 ReactaCore
 Plataforma para gestión de eventos e inscripciones
 
 ReactaCore es una plataforma diseñada para la administración integral de eventos. Permite gestionar la creación de eventos, administrar inscripciones y visualizar información clave de manera centralizada.
