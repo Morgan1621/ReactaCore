@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="200" src="https://github.com/Morgan1621/ReactaCore/blob/master/Oficial.png?raw=true"/>
+  <img width="600" src="https://github.com/Morgan1621/ReactaCore/blob/master/Oficial.png?raw=true"/>
 </div>
 
 [![License: MIT](https://ziadoua.github.io/m3-Markdown-Badges/badges/LicenceMIT/licencemit1.svg)](LICENSE)
