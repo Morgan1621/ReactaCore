@@ -11,4 +11,9 @@
     <ProjectReference Include="..\CAPA_DOMAIN\CAPA_DOMAIN.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataBase\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
 </Project>
