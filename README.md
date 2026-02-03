@@ -3,7 +3,7 @@
 </div>
 
 [![License: MIT](https://ziadoua.github.io/m3-Markdown-Badges/badges/LicenceMIT/licencemit1.svg)](LICENSE)
-![Stars](https://m3-markdown-badges.vercel.app/stars/3/2/Lizbeth222402/ReactaCore)
+
 
 <p align="center">
   <a href="https://skillicons.dev">
