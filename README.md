@@ -1,6 +1,7 @@
-<p align="center">
-  <img src="https://github.com/Morgan1621/ReactaCore/blob/master/Oficial.png?raw=true" alt="Logo Moduserve" width="100%" height="400px" style="object-fit: cover;"/>
-</p>
+<div align="center">
+  <img height="200" src="https://github.com/Morgan1621/ReactaCore/blob/master/Oficial.png?raw=true"  />
+</div>
+
 
 <p align="center">
   <a href="https://skillicons.dev">
