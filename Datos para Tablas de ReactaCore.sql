@@ -51,14 +51,6 @@ INSERT INTO Ponentes (Nombre, EstadoId) VALUES
 ('Coach Roberto León', 2);
 
 
-INSERT INTO Ponentes (Nombre, EstadoId) VALUES
-('Dr. Alberto Reyes', 1),
-('Ing. Sofia Mora', 1),
-('Lic. Pedro Cruz', 1),
-('MSc. Laura Díaz', 1),
-('Coach Roberto León', 2);
-
-
 INSERT INTO EventoPonente (EventoId, PonenteId) VALUES
 (1, 1),
 (1, 2),
@@ -81,6 +73,14 @@ INSERT INTO MetodosPago (NombreMetodo) VALUES
 ('PayPal'),
 ('Efectivo'),
 ('Criptomoneda');
+
+
+INSERT INTO Pagos (InscripcionId, MetodoPagoId, Monto, EstadoId) VALUES
+(1, 1, 50.00, 1),
+(2, 3, 50.00, 1),
+(3, 2, 40.00, 1),
+(4, 4, 0.00, 3),
+(5, 1, 30.00, 2);
 
 
 INSERT INTO Asistentes (InscripcionId, EstadoId) VALUES
