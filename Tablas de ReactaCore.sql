@@ -102,3 +102,68 @@ FOREIGN KEY (EstadoId) REFERENCES Estados(EstadoId)
 );
 
 
+CREATE TABLE Asistentes (
+AsistenteId INT IDENTITY(1,1) PRIMARY KEY,
+InscripcionId INT,
+EstadoId INT,
+FOREIGN KEY (InscripcionId) REFERENCES Inscripciones(InscripcionId),
+FOREIGN KEY (EstadoId) REFERENCES Estados(EstadoId)
+);
+
+
+CREATE TABLE Asistencia (
+AsistenciaId INT IDENTITY(1,1) PRIMARY KEY,
+AsistenteId INT,
+Asistio BIT,
+FOREIGN KEY (AsistenteId) REFERENCES Asistentes(AsistenteId)
+);
+
+
+CREATE TABLE PlantillaCertificado (
+PlantillaId INT IDENTITY(1,1) PRIMARY KEY,
+NombrePlantilla VARCHAR(50),
+EstadoId INT,
+FOREIGN KEY (EstadoId) REFERENCES Estados(EstadoId)
+);
+
+
+CREATE TABLE Certificados (
+CertificadoId INT IDENTITY(1,1) PRIMARY KEY,
+AsistenteId INT,
+PlantillaId INT,
+FechaEmision DATE,
+FOREIGN KEY (AsistenteId) REFERENCES Asistentes(AsistenteId),
+FOREIGN KEY (PlantillaId) REFERENCES PlantillaCertificado(PlantillaId)
+);
+
+
+CREATE TABLE Notificaciones (
+NotificacionId INT IDENTITY(1,1) PRIMARY KEY,
+UsuarioId INT,
+Mensaje VARCHAR(100),
+Fecha DATETIME,
+FOREIGN KEY (UsuarioId) REFERENCES Usuarios(UsuarioId)
+);
+
+
+CREATE TABLE Comentarios (
+ComentarioId INT IDENTITY(1,1) PRIMARY KEY,
+UsuarioId INT,
+EventoId INT,
+Comentario VARCHAR(200),
+Fecha DATETIME,
+FOREIGN KEY (UsuarioId) REFERENCES Usuarios(UsuarioId),
+FOREIGN KEY (EventoId) REFERENCES Eventos(EventoId)
+);
+
+
+CREATE TABLE Bitacora (
+BitacoraId INT IDENTITY(1,1) PRIMARY KEY,
+UsuarioId INT,
+Accion VARCHAR(100),
+Fecha DATETIME,
+FOREIGN KEY (UsuarioId) REFERENCES Usuarios(UsuarioId)
+);
+
+
+
