@@ -1,8 +1,21 @@
 USE ReactaCore;
 
 
+-- SP_LISTAR_CATEGORIAS --
+CREATE OR ALTER PROC SP_LISTAR_CATEGORIAS
+AS
+BEGIN
+    SELECT
+        C.CategoriaId,
+        C.NombreCategoria,
+        E.NombreEstado
+    FROM Categorias C
+    LEFT JOIN Estados E ON C.EstadoId = E.EstadoId;
+END
+GO
 
-         ---INSERTAR---
+
+-- SP_INSERTAR_CATEGORIA --
 CREATE OR ALTER PROC SP_INSERTAR_CATEGORIA
 (
     @NombreCategoria VARCHAR(50),
@@ -25,8 +38,7 @@ END
 GO
 
 
-
-            ---EDITAR---
+-- SP_EDITAR_CATEGORIA --
 CREATE OR ALTER PROC SP_EDITAR_CATEGORIA
 (
     @CategoriaId INT,
@@ -52,7 +64,7 @@ END
 GO
 
 
-          ---ELIMINAR---
+-- SP_ELIMINAR_CATEGORIA --
 CREATE OR ALTER PROC SP_ELIMINAR_CATEGORIA
 (
     @CategoriaId INT
@@ -73,8 +85,7 @@ END
 GO
 
 
-
-              ---BUSCAR---
+-- SP_BUSCAR_CATEGORIA_POR_ID --
 CREATE OR ALTER PROC SP_BUSCAR_CATEGORIA_POR_ID
 (
     @CategoriaId INT
@@ -89,8 +100,7 @@ END
 GO
 
 
-
-              ---FILTRAR---
+-- FILTRAR_CATEGORIA --
 CREATE OR ALTER PROC SP_FILTRAR_CATEGORIA
 (
     @NombreCategoria VARCHAR(50) = NULL,

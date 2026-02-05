@@ -1,7 +1,20 @@
 USE ReactaCore;
 
 
-        --- INSERTAR ---
+-- SP_LISTAR_METODOS_PAGO --
+CREATE OR ALTER PROC SP_LISTAR_METODOS_PAGO
+AS
+BEGIN
+    SELECT
+        MetodoPagoId,
+        NombreMetodo
+    FROM MetodosPago
+    ORDER BY MetodoPagoId;
+END
+GO
+
+
+-- SP_INSERTAR_METODOPAGO --
 CREATE OR ALTER PROC SP_INSERTAR_METODOPAGO
 (
     @NombreMetodo VARCHAR(50)
@@ -23,8 +36,7 @@ END
 GO
 
 
-
-      --- EDITAR ---
+-- SP_EDITAR_METODOPAGO --
 CREATE OR ALTER PROC SP_EDITAR_METODOPAGO
 (
     @MetodoPagoId INT,
@@ -48,8 +60,7 @@ END
 GO
 
 
-
-          --- ELIMINAR ---
+-- SP_ELIMINAR_METODOPAGO --
 CREATE OR ALTER PROC SP_ELIMINAR_METODOPAGO
 (
     @MetodoPagoId INT
@@ -70,8 +81,7 @@ END
 GO
 
 
-
-               -- BUSCAR ---
+-- SP_BUSCAR_METODOPAGO_POR_ID --
 CREATE OR ALTER PROC SP_BUSCAR_METODOPAGO_POR_ID
 (
     @MetodoPagoId INT
@@ -81,8 +91,7 @@ SELECT * FROM MetodosPago WHERE MetodoPagoId = @MetodoPagoId
 GO
 
 
-
-             --- FILTRAR ---
+-- SP_FILTRAR_METODOPAGO --
 CREATE OR ALTER PROC SP_FILTRAR_METODOPAGO
 (
     @NombreMetodo VARCHAR(50)

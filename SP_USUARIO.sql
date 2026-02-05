@@ -1,27 +1,23 @@
 USE ReactaCore;
 
 
-             ---INSERTAR---
-CREATE OR ALTER PROC SP_INSERTAR_USUARIO
-@Nombre VARCHAR(50),@Correo VARCHAR(100),@RolId INT,@EstadoId INT
+-- SP_LISTAR_USUARIOS --
+CREATE OR ALTER PROC SP_LISTAR_USUARIOS
 AS
 BEGIN
-  BEGIN TRY
-    BEGIN TRAN
-      INSERT INTO Usuarios VALUES (@Nombre,@Correo,@RolId,@EstadoId)
-    COMMIT
-    PRINT 'USUARIO INSERTADO'
-  END TRY
-  BEGIN CATCH
-    ROLLBACK
-    PRINT 'ERROR AL INSERTAR USUARIO'
-  END CATCH
+    SELECT
+        U.UsuarioId,
+        U.Nombre,
+        U.Correo,
+        R.NombreRol,
+        E.NombreEstado
+    FROM Usuarios U
+    INNER JOIN Roles R ON U.RolId = R.RolId
+    INNER JOIN Estados E ON U.EstadoId = E.EstadoId;
 END
 GO
 
-
-
-             ---EDITAR---
+-- SP_EDITAR_USUARIO --
 CREATE OR ALTER PROC SP_EDITAR_USUARIO
 @UsuarioId INT,@Nombre VARCHAR(50),@Correo VARCHAR(100),@RolId INT,@EstadoId INT
 AS
@@ -41,7 +37,7 @@ END
 GO
 
 
-           ---ELIMINAR---
+-- SP_ELIMINAR_USUARIO --
 CREATE OR ALTER PROC SP_ELIMINAR_USUARIO
 @UsuarioId INT
 AS
@@ -60,8 +56,7 @@ END
 GO
 
 
-
-           ---BUSCAR---
+-- SP_BUSCAR_USUARIO_POR_ID --
 CREATE OR ALTER PROC SP_BUSCAR_USUARIO_POR_ID
 (
     @UsuarioId INT
@@ -82,7 +77,7 @@ END
 GO
 
 
-              ---FILTRAR---
+-- SP_FILTRAR_USUARIO --
 CREATE OR ALTER PROC SP_FILTRAR_USUARIO
 (
     @Nombre VARCHAR(50) = NULL,

@@ -1,8 +1,25 @@
 USE ReactaCore;
 
+-- SP_LISTAR_INSCRIPCIONES --
+CREATE OR ALTER PROC SP_LISTAR_INSCRIPCIONES
+AS
+BEGIN
+    SELECT
+        I.InscripcionId,
+        U.Nombre AS NombreUsuario,
+        U.Correo AS CorreoUsuario,
+        E.NombreEvento,
+        Es.NombreEstado AS EstadoInscripcion
+    FROM Inscripciones I
+    INNER JOIN Usuarios U ON I.UsuarioId = U.UsuarioId
+    INNER JOIN Eventos E ON I.EventoId = E.EventoId
+    INNER JOIN Estados Es ON I.EstadoId = Es.EstadoId
+    ORDER BY I.InscripcionId;
+END
+GO
 
 
-          --- INSERTAR ---
+-- SP_INSERTAR_INSCRIPCION --
 CREATE OR ALTER PROC SP_INSERTAR_INSCRIPCION
 (
     @UsuarioId INT,
@@ -25,7 +42,8 @@ BEGIN
 END
 GO
 
-             --- EDITAR ---
+
+-- SP_EDITAR_INSCRIPCION ---
 CREATE OR ALTER PROC SP_EDITAR_INSCRIPCION
 (
     @InscripcionId INT,
@@ -49,7 +67,7 @@ END
 GO
 
 
-             --- ELIMINAR ---
+-- SP_ELIMINAR_INSCRIPCION --
 CREATE OR ALTER PROC SP_ELIMINAR_INSCRIPCION
 (
     @InscripcionId INT
@@ -70,9 +88,7 @@ END
 GO
 
 
-
-
-          --- BUSCAR ---
+-- SP_BUSCAR_INSCRIPCION_POR_ID --
 CREATE OR ALTER PROC SP_BUSCAR_INSCRIPCION_POR_ID
 (
     @InscripcionId INT
@@ -82,9 +98,8 @@ SELECT * FROM Inscripciones WHERE InscripcionId = @InscripcionId
 GO
 
 
-
-         --- FILTRAR ---
-CREATE OR ALTER PROC SP_FILTRAR_INSCRIPCION
+-- SP_BUSCAR_INSCRIPCION_POR_ID --
+CREATE OR ALTER PROC SP_BUSCAR_INSCRIPCION_POR_ID
 (
     @UsuarioId INT = NULL,
     @EventoId INT = NULL

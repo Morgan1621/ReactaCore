@@ -1,9 +1,20 @@
-
 USE ReactaCore;
 
 
+-- SP_LISTAR_PONENTES --
+CREATE OR ALTER PROC SP_LISTAR_PONENTES
+AS
+BEGIN
+    SELECT
+        P.PonenteId,
+        P.Nombre,
+        E.NombreEstado
+    FROM Ponentes P
+    LEFT JOIN Estados E ON P.EstadoId = E.EstadoId;
+END
+GO
 
-      ---INSERTAR---
+-- SP_INSERTAR_PONENTE --
 CREATE OR ALTER PROC SP_INSERTAR_PONENTE
 (
     @Nombre VARCHAR(50),
@@ -26,9 +37,7 @@ END
 GO
 
 
-
-
-         ---EDITAR---
+-- SP_EDITAR_PONENTE --
 CREATE OR ALTER PROC SP_EDITAR_PONENTE
 (
     @PonenteId INT,
@@ -54,8 +63,7 @@ END
 GO
 
 
-
-      ---ELIMINAR---
+ -- SP_ELIMINAR_PONENTE --
 CREATE OR ALTER PROC SP_ELIMINAR_PONENTE
 (
     @PonenteId INT
@@ -76,9 +84,7 @@ END
 GO
 
 
-
-
-      ---BUSCAR PONENTE POR ID---
+-- SP_BUSCAR_PONENTE_POR_ID --
 CREATE OR ALTER PROC SP_BUSCAR_PONENTE_POR_ID
 (
     @PonenteId INT
@@ -88,9 +94,7 @@ SELECT * FROM Ponentes WHERE PonenteId = @PonenteId
 GO
 
 
-
-
-          ---FILTRAR PONENTE---
+-- SP_FILTRAR_PONENTE --
 CREATE OR ALTER PROC SP_FILTRAR_PONENTE
 (
     @Nombre VARCHAR(50) = NULL,
