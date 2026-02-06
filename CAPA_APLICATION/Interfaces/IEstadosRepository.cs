@@ -19,7 +19,7 @@ namespace CAPA_APLICATION.Interfaces
 
         Task EliminarEstadoAsync(int Id);
 
-        /*pendiente*/
+        /*pendiente ajaaa*/
 
     }
 }
