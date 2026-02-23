@@ -54,7 +54,7 @@ El objetivo de ReactaCore es ofrecer una plataforma moderna, ágil y centralizad
 
 ## 👩‍💻 Autores y Equipo de desarrollo Moduserve
 
-- **Rosmery de los Angeles Herrera Angulo**
-- **Mcneiry Rene Medrano Castillo**
 - **Josseling Lizbeth Gutiérrez Martinbez**
+- **Rosmery de los Angeles Herrera Angulo**
+
 
