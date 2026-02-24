@@ -1,6 +1,7 @@
 ﻿using CAPA_DOMAIN;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace CAPA_APLICATION.Interfaces
         Task EditarEstadoAsync(ESTADO sTADO);
 
         Task EliminarEstadoAsync(int Id);
+
+        /*pendiente ajaaa*/
 
     }
 }
