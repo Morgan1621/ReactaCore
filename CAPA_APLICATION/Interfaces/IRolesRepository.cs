@@ -11,7 +11,7 @@ namespace CAPA_APLICATION.Interfaces
     public interface IRolesRepository
     {
 
-        Task<IEnumerable<Roles>> ListarEstadoAsync();
+        Task<IEnumerable<Roles>> ListarRolesAsync();
 
         Task<IEnumerable<Roles>> ListarRolesPorNombreAsync();
         Task NuevoRolesAsync(Roles roles);
