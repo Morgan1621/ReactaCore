@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CAPA_APLICATION.Interfaces
 {
-    public interface IAsistentesRepository
+    public interface IAsistenciaRepository
     {
 
         Task<IEnumerable<Asistencia>> ListarAsistenciaAsync();
